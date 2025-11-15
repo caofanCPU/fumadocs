@@ -163,7 +163,9 @@ function useAnchorObserver(watch: string[], single: boolean): string[] {
     }
 
     if (state.visible.size === 0) {
-      const viewTop = entries[0].rootBounds!.top;
+      const rootBounds = entries[0]?.rootBounds;
+      if (!rootBounds) return;
+      const viewTop = rootBounds.top;
       let fallback: Element | undefined;
       let min = -1;
 
