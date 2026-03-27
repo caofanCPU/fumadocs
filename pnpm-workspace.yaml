@@ -1,4 +1,12 @@
 packages:
   - packages/*
   - apps/*
-  - examples/*
+
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - '@swc/core'
+  - bun
+  - esbuild
+  - msw
+  - sharp
+  - vue-demi
